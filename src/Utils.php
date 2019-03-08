@@ -18,4 +18,8 @@ Class Utils {
 		$hours += $since_start->h;
 		return $hours;
     }
+
+    public static function removeWhitespaces($string) {
+    	return str_replace(' ', '', $string);
+    }
 }
