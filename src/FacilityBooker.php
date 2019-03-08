@@ -69,7 +69,7 @@ Class FacilityBooker
 	}
 
 	// returns facility Id as integer
-	public function getFacilityId($facility_name = '') {
+	public static function getFacilityId($facility_name = '') {
 		if (empty($facility_name)) {
 			return 0;
 		}
@@ -127,7 +127,7 @@ Class FacilityBooker
 		}
 	}
 
-	public function isFacilityAvailable($facility_id, $start_time, $end_time) {
+	public static function isFacilityAvailable($facility_id, $start_time, $end_time) {
 		
 		if (!is_null($this->fileHandle)) {
 			$available = true;
@@ -157,7 +157,7 @@ Class FacilityBooker
 	}
 
 	// returns rate
-	public function calculateRate($facility_id, $start_time, $end_time) {
+	public static function calculateRate($facility_id, $start_time, $end_time) {
 		// check if it's variable rate
 		if ($this->facilityRateType[$facility_id] === 'fixed') {
 			$hoursToBook = Utils::getTimeDifferenceInHours($start_time, $end_time);
